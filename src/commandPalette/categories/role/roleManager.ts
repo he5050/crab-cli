@@ -1,8 +1,6 @@
 /**
  * 角色管理系统 — ROLE.md 文件管理，支持角色切换、创建、删除
  *
- * 参考 snow-cli source/utils/commands/role.ts。
- * 适配: 存储路径 ~/.crab/ + 项目根，适配 crab-cli 配置结构。
  *
  * 角色: ROLE.md (默认激活角色), ROLE-<hex>.md (备用角色)
  * 子代理角色: ROLE-<agentName>.md

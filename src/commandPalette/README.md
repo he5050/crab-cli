@@ -184,7 +184,7 @@ const success = await registry.executeSlash("profile-switch", "production");
 │  │  Registry (注册/查询/Frecency/执行)             │   │
 │  │  ┌─ config/     ── 配置管理命令                  │   │
 │  │  ├─ ide/        ── Git/索引/LSP 命令            │   │
-│  │  ├─ operational ── 导航/工具/钩子/P3 命令        │   │
+│  │  ├─ operational ── 导航/工具/钩子/插件/诊断命令  │   │
 │  │  ├─ session/    ── Agent 会话命令                │   │
 │  │  └─ task/       ── 任务管理命令                  │   │
 │  └───────────────────────────────────────────────┘   │
@@ -224,7 +224,7 @@ const success = await registry.executeSlash("profile-switch", "production");
 | IDE                 | Git 操作、代码库索引、LSP 诊断        | `/git-status`, `/rebuild-index`, `/lsp-restart` |
 | 导航                | 框架级导航和模式切换                  | 退出、帮助、模式切换                            |
 | 工具/钩子/角色/技能 | 工具管理、钩子管理、角色切换          | `/tools`, `/hooks`, `/role-switch`              |
-| P3 运维             | 插件市场、远程工作区、高级运维        | `/marketplace`, `/workspace`                    |
+| 运维                | 插件市场、远程工作区、快捷工具、诊断  | `/plugin-market`, `/remote-workspace`           |
 | 会话                | Agent 会话管理、消息操作、分支/检查点 | `/session-new`, `/undo`, `/branch`              |
 | 任务                | Todo 管理、会话切换、导出             | `/todo`, `/export`                              |
 

@@ -1,8 +1,6 @@
 /**
  * 配置导出工具 — 将 crab-cli 全量配置序列化为 Markdown 文档
  *
- * 参考 snow-cli source/utils/config/configExporter.ts。
- * 适配: 简化为 Markdown 输出（crab-cli 不需要 YAML），适配 crab-cli 配置结构。
  *
  * 导出内容: API Provider、MCP 服务、系统提示词、代理、主题、子代理等
  */

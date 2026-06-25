@@ -1,8 +1,6 @@
 /**
  * 项目初始化工作流 — AI 驱动的多步骤项目引导
  *
- * 参考 snow-cli source/utils/commands/init.ts。
- * 适配: 简化为单次提示词注入模式，适配 crab-cli 工具体系。
  *
  * 使用: /init 命令注入系统提示词，引导 AI 执行初始化工作流
  * 步骤: 分析项目 → 生成 CLAUDE.md → 推荐 Hooks → 推荐角色配置

@@ -1,8 +1,6 @@
 /**
  * 角色命令集 — /role 和 /role-subagent 的 slash 命令注册
  *
- * 参考 snow-cli source/utils/commands/role.ts, roleSubagent.ts。
- * 适配: 使用 crab-cli Command 接口，无 UI 面板（headless 操作）。
  *
  *   /role             — 创建或管理自定义角色
  *   /role-subagent   — 管理子代理自定义角色

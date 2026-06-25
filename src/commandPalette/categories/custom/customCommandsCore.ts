@@ -1,8 +1,6 @@
 /**
  * 自定义命令核心 — 用户自定义 slash 命令的 CRUD 与持久化
  *
- * 参考 snow-cli source/utils/commands/custom.ts。
- * 适配: 存储路径 ~/.crab/commands/，适配 Bun 运行时，简化注册逻辑。
  *
  * 存储: ~/.crab/commands/<commandName>.json (全局) 或 .crab/commands/<commandName>.json (项目)
  * 命名空间: deploy:staging -> commands/deploy/staging.json

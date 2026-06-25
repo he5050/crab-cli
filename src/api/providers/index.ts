@@ -6,7 +6,7 @@
  *   - azure.ts          — Azure OpenAI
  *   - bedrock.ts        — AWS Bedrock（SigV4 签名）
  *   - xai.ts            — xAI Grok
- *   - github-copilot.ts — GitHub Copilot（OAuth Device Flow）
+ *   - githubCopilot.ts — GitHub Copilot（OAuth Device Flow）
  */
 export { OPENROUTER_DEFAULTS, createOpenRouterConfig, fetchOpenRouterModels } from "./openrouter";
 export {
@@ -35,7 +35,7 @@ export {
   getCopilotToken,
   exchangeCopilotToken,
   createCopilotConfig,
-} from "./github-copilot";
+} from "./githubCopilot";
 
 /** 所有扩展 Provider 的元信息 */
 export interface ExtendedProviderMeta {

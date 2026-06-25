@@ -1,28 +1,28 @@
 /**
- * EventBus 边界与补充测试 — P3 合并套件。
+ * EventBus 边界与补充测试 — 高级场景套件。
  *
  * 覆盖:
- *   - P3-3 跨实例隔离
- *   - P3-4 进程退出清理(destroy / SIGINT)
- *   - P3-5 节流 flush 真实链路
- *   - P3-6 性能基准(10k 事件)
- *   - P3-7 McpServerStatusItem 载荷形状
- *   - P3-8 subscribeForSession 边界
- *   - P3-9 前缀订阅 + 节流事件交叉链路
- *   - P3-10 namingRules 校验
- *   - P3-11 flushSync 异常恢复
- *   - P3-12 节流队列满溢出 + flush 超时组合
+ *   - 跨实例隔离
+ *   - 进程退出清理(destroy / SIGINT)
+ *   - 节流 flush 真实链路
+ *   - 性能基准(10k 事件)
+ *   - McpServerStatusItem 载荷形状
+ *   - subscribeForSession 边界
+ *   - 前缀订阅 + 节流事件交叉链路
+ *   - namingRules 校验
+ *   - flushSync 异常恢复
+ *   - 节流队列满溢出 + flush 超时组合
  */
 import { afterEach, beforeEach, describe, expect, test } from "bun:test";
-import { EventBus, defineEvent, filterExpiredEvents } from "@/bus";
+import { EventBus, defineEvent } from "@/bus";
 import { AppEvent } from "@/bus";
 import { validateEventName } from "@/bus";
 
 const TestEvt = defineEvent<{ value: number }>("p3.test");
 const MsgEvt = defineEvent<{ sessionId?: string; text: string }>("p3.msg");
 
-// ─── P3-3 跨实例隔离 ─────────────────────────────────────────
-describe("EventBus — 跨实例隔离(P3-3)", () => {
+// ─── 跨实例隔离 ─────────────────────────────────────────
+describe("EventBus — 跨实例隔离", () => {
   test("两个 EventBus 实例互不干扰订阅", async () => {
     const a = new EventBus();
     const b = new EventBus();
@@ -76,8 +76,8 @@ describe("EventBus — 跨实例隔离(P3-3)", () => {
   });
 });
 
-// ─── P3-4 进程退出清理 ──────────────────────────────────────
-describe("EventBus — 生命周期(P3-4)", () => {
+// ─── 进程退出清理 ──────────────────────────────────────
+describe("EventBus — 生命周期", () => {
   test("destroy 后 publish 不报错但无订阅者处理", () => {
     const bus = new EventBus();
     bus.subscribe(TestEvt, () => {});
@@ -95,8 +95,8 @@ describe("EventBus — 生命周期(P3-4)", () => {
   });
 });
 
-// ─── P3-5 节流 flush 真实链路 ────────────────────────────────
-describe("EventBus — flush 节流链路(P3-5)", () => {
+// ─── 节流 flush 真实链路 ────────────────────────────────
+describe("EventBus — flush 节流链路", () => {
   test("flush 期间有节流事件入队,所有事件最终被派发", async () => {
     const bus = new EventBus();
     const received: string[] = [];
@@ -115,8 +115,8 @@ describe("EventBus — flush 节流链路(P3-5)", () => {
   });
 });
 
-// ─── P3-6 性能基准 ──────────────────────────────────────────
-describe("EventBus — 性能基准(P3-6)", () => {
+// ─── 性能基准 ──────────────────────────────────────────
+describe("EventBus — 性能基准", () => {
   test("1k 事件 publish+flush 1s 内完成", async () => {
     const bus = new EventBus();
     bus.subscribe(TestEvt, () => {});
@@ -146,8 +146,8 @@ describe("EventBus — 性能基准(P3-6)", () => {
   });
 });
 
-// ─── P3-7 McpServerStatusItem 载荷形状 ───────────────────────
-describe("AppEvent.McpStatusUpdated — 载荷(P3-7)", () => {
+// ─── McpServerStatusItem 载荷形状 ───────────────────────
+describe("AppEvent.McpStatusUpdated — 载荷", () => {
   let bus: EventBus;
   beforeEach(() => {
     bus = new EventBus();
@@ -197,8 +197,8 @@ describe("AppEvent.McpStatusUpdated — 载荷(P3-7)", () => {
   });
 });
 
-// ─── P3-8 subscribeForSession 边界 ─────────────────────────
-describe("EventBus — subscribeForSession 边界(P3-8)", () => {
+// ─── subscribeForSession 边界 ─────────────────────────
+describe("EventBus — subscribeForSession 边界", () => {
   let bus: EventBus;
   beforeEach(() => {
     bus = new EventBus();
@@ -235,8 +235,8 @@ describe("EventBus — subscribeForSession 边界(P3-8)", () => {
   });
 });
 
-// ─── P3-9 前缀订阅 + 节流事件交叉链路 ──────────────────────
-describe("EventBus — 前缀订阅+节流交叉(P3-9)", () => {
+// ─── 前缀订阅 + 节流事件交叉链路 ──────────────────────
+describe("EventBus — 前缀订阅+节流交叉", () => {
   let bus: EventBus;
   beforeEach(() => {
     bus = new EventBus();
@@ -271,8 +271,8 @@ describe("EventBus — 前缀订阅+节流交叉(P3-9)", () => {
   });
 });
 
-// ─── P3-10 namingRules 校验 ────────────────────────────────
-describe("namingRules — 命名规范校验(P3-10)", () => {
+// ─── namingRules 校验 ────────────────────────────────
+describe("namingRules — 命名规范校验", () => {
   test("点分命名通过校验", () => {
     expect(validateEventName("session.created")).toBeNull();
     expect(validateEventName("mcp.tools.list.changed")).toBeNull();
@@ -298,8 +298,8 @@ describe("namingRules — 命名规范校验(P3-10)", () => {
   });
 });
 
-// ─── P3-11 flushSync 异常恢复 ──────────────────────────────
-describe("EventBus — flushSync 异常恢复(P3-11)", () => {
+// ─── flushSync 异常恢复 ──────────────────────────────
+describe("EventBus — flushSync 异常恢复", () => {
   let bus: EventBus;
   beforeEach(() => {
     bus = new EventBus();
@@ -324,8 +324,8 @@ describe("EventBus — flushSync 异常恢复(P3-11)", () => {
   });
 });
 
-// ─── P3-12 节流队列满溢出 + flush 超时组合 ─────────────────
-describe("EventBus — 节流溢出+flush 超时(P3-12)", () => {
+// ─── 节流队列满溢出 + flush 超时组合 ─────────────────
+describe("EventBus — 节流溢出+flush 超时", () => {
   let bus: EventBus;
   beforeEach(() => {
     bus = new EventBus();
@@ -343,6 +343,6 @@ describe("EventBus — 节流溢出+flush 超时(P3-12)", () => {
     }
     // 较短 timeout,不要求完全排空,只验证不抛错
     const result = bus.flush(100);
-    await expect(result).resolves.toBeUndefined();
+    expect(result).resolves.toBeUndefined();
   });
 });

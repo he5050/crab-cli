@@ -1,8 +1,6 @@
 /**
  * 文件笔记本管理器 — 按文件维度管理笔记/备注
  *
- * 参考 snow-cli source/utils/core/notebookManager.ts。
- * 适配: 存储路径改为 ~/.crab/notebook/，适配 Bun 运行时。
  *
  * 存储: ~/.crab/notebook/{projectName}.json
  * 快照: ~/.crab/notebook/{projectName}_snapshots.json（用于消息级回滚）

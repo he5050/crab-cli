@@ -1,8 +1,6 @@
 /**
  * 代码库 TODO 扫描器 — 扫描项目中的 TODO/FIXME/HACK/XXX/BUG 注释
  *
- * 参考 snow-cli source/utils/core/todoScanner.ts。
- * 适配: 移除 i18n，简化目录扫描，适配 Bun 运行时。
  *
  * 支持单行注释、块注释、HTML注释、@todo注解等 TODO/FIXME/HACK/XXX/BUG 匹配
  */

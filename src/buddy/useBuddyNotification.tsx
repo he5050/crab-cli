@@ -33,7 +33,7 @@ export function findBuddyTriggerPositions(text: string): number[] {
 
 // ─── 通知 hook ──────────────────────────────────────────────────
 
-const TEASER_TEXT = "You can adopt a terminal companion! Type /buddy hatch to meet yours.";
+const TEASER_TEXT = "你可以领养一个终端小伙伴！输入 /buddy hatch 来遇见你的伙伴。";
 
 export function useBuddyNotification(): void {
   onMount(() => {

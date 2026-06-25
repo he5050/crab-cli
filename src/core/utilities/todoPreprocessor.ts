@@ -1,8 +1,7 @@
 /**
  * TODO 上下文预处理器 — 将 TODO 列表格式化为注入对话上下文的 markdown
  *
- * 参考 snow-cli source/utils/core/todoPreprocessor.ts。
- * 适配: 简化输出格式。
+ *
  */
 
 // ─── 类型 ──────────────────────────────────────────────────

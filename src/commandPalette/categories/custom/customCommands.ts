@@ -1,8 +1,6 @@
 /**
  * 自定义命令注册 — /custom 及用户自定义命令的 slash 命令注册
  *
- * 参考 snow-cli source/utils/commands/custom.ts。
- * 适配: 使用 crab-cli Command 接口注册，通过 CommandDeps 访问事件总线。
  *
  *   /custom       — 显示自定义命令帮助
  *   /custom add   — 创建自定义命令
