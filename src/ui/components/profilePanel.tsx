@@ -32,6 +32,7 @@
 import { createSignal, onCleanup } from "solid-js";
 import { useKeyboard } from "@opentui/solid";
 import { useEventBus } from "@/ui/contexts/eventBus";
+import { useTheme } from "@/ui/contexts/theme";
 import { AppEvent } from "@bus";
 import { createProfile, deleteProfile, listProfiles, switchProfile } from "@config";
 import { iconFolder, iconIdle, iconRunning } from "@/ui/utils/icon";
@@ -44,6 +45,7 @@ type PanelProfile = Awaited<ReturnType<typeof listProfiles>>[number];
 
 export function ProfilePanel(props?: ProfilePanelProps) {
   const eventBus = useEventBus();
+  const theme = useTheme();
   const [visible, setVisible] = createSignal(false);
   const [selectedIndex, setSelectedIndex] = createSignal(0);
   const [mode, setMode] = createSignal<"list" | "create" | "confirm-delete">("list");
@@ -255,7 +257,7 @@ export function ProfilePanel(props?: ProfilePanelProps) {
 
   return (
     <box position="absolute" bottom="100%" left={0} width="100%" zIndex={100}>
-      <box flexDirection="column" borderStyle="rounded" borderColor="magenta" padding={1}>
+      <box flexDirection="column" borderStyle="rounded" borderColor={theme.colors.secondary} padding={1}>
         {mode() === "create" ? (
           <>
             <text>创建新 Profile</text>

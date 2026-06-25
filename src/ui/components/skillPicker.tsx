@@ -124,11 +124,11 @@ export function SkillPicker(props?: SkillPickerProps) {
   return (
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 100;">
       <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);" />
-      <div style="position: relative; margin: auto; max-width: 60; border: 1px solid #444; padding: 1 2;">
+      <div style={`position: relative; margin: auto; max-width: 60; border: 1px solid ${theme.colors.border}; padding: 1 2;`}>
         <div style="bold: true; margin-bottom: 1;">📚 Skills</div>
 
         {/* 搜索框 */}
-        <div style="margin-bottom: 1; border-bottom: 1px solid #333; padding-bottom: 1;">
+        <div style={`margin-bottom: 1; border-bottom: 1px solid ${theme.extended.borderExt.subtle}; padding-bottom: 1;`}>
           <span style={`color: ${theme.colors.muted}`}>{iconSearch} </span>
           <span>{searchQuery() || <span style={`color: ${theme.colors.muted};`}>输入搜索...</span>}</span>
           {searchQuery() && (

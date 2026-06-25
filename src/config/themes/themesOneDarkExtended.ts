@@ -1,0 +1,123 @@
+/**
+ * One Dark 精确扩展色值定义
+ *
+ * 基于 Atom One Dark 官方色板，为语法高亮、Diff、Markdown 等
+ * 提供精确的 token 颜色，替代启发式推导。
+ */
+import type { ThemeExtendedOverrides } from "../types/themeTypes";
+
+export const ONE_DARK_DARK_EXTENDED: ThemeExtendedOverrides = {
+  backgroundMenu: "#21252b",
+  bg: {
+    element: "#1b1d23",
+    main: "#282c34",
+    panel: "#21252b",
+  },
+  borderExt: {
+    active: "#5c6370",
+    main: "#3b4048",
+    subtle: "#282c34",
+  },
+  diff: {
+    added: "#98c379",
+    addedBg: "#1e2a1c",
+    addedLineNumberBg: "#1a2418",
+    context: "#5c6370",
+    contextBg: "#282c34",
+    highlightAdded: "#98c379",
+    highlightRemoved: "#e06c75",
+    hunkHeader: "#61afef",
+    lineNumber: "#5c6370",
+    removed: "#e06c75",
+    removedBg: "#2a1c1e",
+    removedLineNumberBg: "#24181a",
+  },
+  markdown: {
+    blockQuote: "#d19a66",
+    code: "#98c379",
+    codeBlock: "#d8dee9",
+    emph: "#d19a66",
+    heading: "#61afef",
+    horizontalRule: "#3b4048",
+    image: "#c678dd",
+    imageText: "#56b6c2",
+    link: "#61afef",
+    linkText: "#56b6c2",
+    listEnumeration: "#56b6c2",
+    listItem: "#c678dd",
+    strong: "#c678dd",
+    text: "#d8dee9",
+  },
+  selectedListItemText: "#282c34",
+  syntax: {
+    comment: "#5c6370",
+    func: "#61afef",
+    keyword: "#c678dd",
+    number: "#d19a66",
+    operator: "#56b6c2",
+    punctuation: "#d8dee9",
+    string: "#98c379",
+    type: "#e5c07b",
+    variable: "#e06c75",
+  },
+  textMuted: "#5c6370",
+  thinkingOpacity: 0.6,
+};
+
+export const ONE_DARK_LIGHT_EXTENDED: ThemeExtendedOverrides = {
+  backgroundMenu: "#f0f0f0",
+  bg: {
+    element: "#e8e8e8",
+    main: "#fafafa",
+    panel: "#f0f0f0",
+  },
+  borderExt: {
+    active: "#d1d5db",
+    main: "#e5e5e6",
+    subtle: "#efefef",
+  },
+  diff: {
+    added: "#1e725c",
+    addedBg: "#d5e5d5",
+    addedLineNumberBg: "#c5d5c5",
+    context: "#a0a1a7",
+    contextBg: "#fafafa",
+    highlightAdded: "#50a14f",
+    highlightRemoved: "#e45649",
+    hunkHeader: "#4078f2",
+    lineNumber: "#a0a1a7",
+    removed: "#c53b53",
+    removedBg: "#f7d8db",
+    removedLineNumberBg: "#e7c8cb",
+  },
+  markdown: {
+    blockQuote: "#986801",
+    code: "#50a14f",
+    codeBlock: "#383a42",
+    emph: "#986801",
+    heading: "#4078f2",
+    horizontalRule: "#e5e5e6",
+    image: "#a626a4",
+    imageText: "#0184bc",
+    link: "#4078f2",
+    linkText: "#0184bc",
+    listEnumeration: "#0184bc",
+    listItem: "#a626a4",
+    strong: "#a626a4",
+    text: "#383a42",
+  },
+  selectedListItemText: "#fafafa",
+  syntax: {
+    comment: "#a0a1a7",
+    func: "#4078f2",
+    keyword: "#a626a4",
+    number: "#986801",
+    operator: "#0184bc",
+    punctuation: "#383a42",
+    string: "#50a14f",
+    type: "#c18401",
+    variable: "#e45649",
+  },
+  textMuted: "#a0a1a7",
+  thinkingOpacity: 0.55,
+};

@@ -77,9 +77,58 @@ jobs:
             release/*-checksums.txt
           if-no-files-found: error
 
+  build-binaries:
+    name: Build Pre-compiled Binary ${{ matrix.target }}
+    needs: build
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-14
+            target: darwin-arm64
+          - runner: macos-13
+            target: darwin-x64
+          - runner: ubuntu-22.04
+            target: linux-x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.8
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build pre-compiled binary
+        run: ./scripts/build-binaries.sh ${{ matrix.target }}
+
+      - name: Verify binary
+        run: |
+          BINARY="dist/binaries/crab-${{ matrix.target }}"
+          if [ -f "$BINARY" ]; then
+            chmod +x "$BINARY"
+            "$BINARY" --version || true
+          else
+            echo "Binary not found: $BINARY"
+            exit 1
+          fi
+
+      - name: Upload binary artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: binary-${{ matrix.target }}
+          path: |
+            dist/binaries/crab-${{ matrix.target }}
+            dist/binaries/crab-${{ matrix.target }}.tar.gz
+          if-no-files-found: error
+
   publish:
     name: Publish GitHub Release
-    needs: build
+    needs: [build, build-binaries]
     runs-on: ubuntu-22.04
     env:
       TAG_NAME: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || inputs.tag_name }}
@@ -99,18 +148,46 @@ jobs:
           pattern: release-*
           merge-multiple: true
 
+      - name: Download pre-compiled binaries
+        uses: actions/download-artifact@v4
+        with:
+          path: dist/binaries
+          pattern: binary-*
+          merge-multiple: true
+
       - name: Generate combined checksums
-        run: bun run scripts/release/checksums.ts release/*.tar.gz
+        run: |
+          # Generate checksums for release archives
+          bun run scripts/release/checksums.ts release/*.tar.gz
+
+          # Generate checksums for pre-compiled binaries
+          if [ -d dist/binaries ] && ls dist/binaries/crab-*.tar.gz 1>/dev/null 2>&1; then
+            cd dist/binaries
+            : > checksums.txt
+            for archive in crab-*.tar.gz; do
+              if [ -f "$archive" ]; then
+                hash=$(sha256sum "$archive" | awk '{print $1}')
+                echo "${hash}  ${archive}" >> checksums.txt
+              fi
+            done
+            for binary in crab-darwin-* crab-linux-*; do
+              if [ -f "$binary" ]; then
+                hash=$(sha256sum "$binary" | awk '{print $1}')
+                echo "${hash}  ${binary}" >> checksums.txt
+              fi
+            done
+            cd -
+          fi
 
       - name: Create or update GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if gh release view "$TAG_NAME" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            gh release upload "$TAG_NAME" release/* --clobber --repo "$GITHUB_REPOSITORY"
+            gh release upload "$TAG_NAME" release/* dist/binaries/crab-*.tar.gz dist/binaries/checksums.txt --clobber --repo "$GITHUB_REPOSITORY"
             gh release edit "$TAG_NAME" --title "crab-cli $TAG_NAME" --repo "$GITHUB_REPOSITORY"
           else
-            gh release create "$TAG_NAME" release/* \
+            gh release create "$TAG_NAME" release/* dist/binaries/crab-*.tar.gz dist/binaries/checksums.txt \
               --title "crab-cli $TAG_NAME" \
               --generate-notes \
               --target "$GITHUB_SHA" \

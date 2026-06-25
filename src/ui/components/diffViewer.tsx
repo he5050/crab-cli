@@ -55,6 +55,8 @@ export interface DiffViewerProps {
   view?: "unified" | "split";
   /** 是否显示行号 */
   showLineNumbers?: boolean;
+  /** wrap 模式:word(换行)或 none(不换行)，默认 "word" */
+  wrapMode?: "word" | "none";
 }
 
 // ─── 文件扩展名 → 语言 ──────────────────────────────────────
@@ -211,7 +213,7 @@ export function DiffViewer(props: DiffViewerProps) {
           removedSignColor={colors().removedSignColor}
           lineNumberFg={colors().lineNumberFg}
           conceal={true}
-          wrapMode="word"
+          wrapMode={props.wrapMode ?? "word"}
         />
       </box>
     </Show>

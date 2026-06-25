@@ -82,6 +82,7 @@ export type DiffFileStatus = "added" | "deleted" | "modified";
 export const DIFF_VIEWER_SHOW_FILE_TREE_KEY = "diff_viewer_show_file_tree";
 export const DIFF_VIEWER_SINGLE_PATCH_KEY = "diff_viewer_single_patch";
 export const DIFF_VIEWER_VIEW_KEY = "diff_viewer_view";
+export const DIFF_WRAP_MODE_KEY = "diff_wrap_mode";
 
 export function parseDiffFiles(diff: string): DiffFileEntry[] {
   const lines = diff.split("\n");

@@ -185,7 +185,7 @@ function createModelFactory(
   method: RequestMethod,
 ): (modelId: string) => LanguageModelV3 {
   // 扩展 Provider 使用 OpenAI Chat 兼容模式
-  const openAICompatProviders = ["openrouter", "xai", "github-copilot", "azure", "bedrock"];
+  const openAICompatProviders = ["openrouter", "xai", "github-copilot", "azure", "bedrock", "cloudflare"];
   if (openAICompatProviders.includes(providerId) && method === "chat") {
     return createOpenAIChatFactory(providerId, pConfig);
   }

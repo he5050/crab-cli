@@ -88,7 +88,7 @@ export function SkillCreationPanel(_props?: SkillCreationPanelProps) {
 
   return (
     <box position="absolute" bottom="100%" left={0} width="100%" zIndex={100}>
-      <box flexDirection="column" borderStyle="rounded" borderColor="cyan" padding={1}>
+      <box flexDirection="column" borderStyle="rounded" borderColor={theme.colors.info} padding={1}>
         <text>
           {toolWrite} 创建 Skill ({stepLabels[currentStep]})
         </text>
@@ -116,7 +116,7 @@ export function SkillCreationPanel(_props?: SkillCreationPanelProps) {
           <box flexDirection="column">
             <text>分类:</text>
             {CATEGORIES.map((cat, idx) => (
-              <text fg={idx === categoryIndex() ? "cyan" : "gray"}>
+              <text fg={idx === categoryIndex() ? theme.colors.info : theme.colors.muted}>
                 {idx === categoryIndex() ? "▸ " : "  "}
                 {cat}
               </text>

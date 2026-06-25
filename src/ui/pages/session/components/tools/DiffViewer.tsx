@@ -28,10 +28,12 @@
  *   3. 映射主题色到 diff 组件 props
  *   4. 渲染 OpenTUI <diff> 组件
  */
-import { Show, createMemo } from "solid-js";
+import { Show, createMemo, createSignal } from "solid-js";
 import { useTerminalDimensions } from "@opentui/solid";
 import type { ExtendedThemeColors, ThemeColors } from "@/ui/contexts/theme";
 import type { SyntaxStyle } from "@opentui/core";
+import { useKV } from "@/ui/contexts/kv";
+import { DIFF_WRAP_MODE_KEY } from "@/ui/pages/pluginDiffModel";
 
 // ─── Props 类型 ──────────────────────────────────────────────
 
@@ -84,8 +86,21 @@ export function resolveDiffView(
 
 export function DiffViewer(props: DiffViewerProps) {
   const dimensions = useTerminalDimensions();
+  const kv = useKV();
 
   const resolvedView = createMemo(() => resolveDiffView(props.view ?? "auto", dimensions().width));
+
+  // wrap mode: 从 KV 读取持久化值，默认 "word"
+  const [wrapMode, setWrapMode] = createSignal<"word" | "none">(kv.get<"word" | "none">(DIFF_WRAP_MODE_KEY) ?? "word");
+
+  const toggleWrapMode = () => {
+    const next = wrapMode() === "word" ? "none" : "word";
+    setWrapMode(next);
+    kv.set(DIFF_WRAP_MODE_KEY, next);
+  };
+
+  // 暴露 toggleWrapMode 给父组件（通过 ref 或事件）
+  // 使用全局事件让外部可以触发切换
 
   // diff 颜色映射 — 优先使用 extended，降级到基础色
   const diffColors = createMemo(() => {
@@ -111,6 +126,9 @@ export function DiffViewer(props: DiffViewerProps) {
     };
   });
 
+  // 优先使用 props.wrapMode，否则使用 KV 持久化的 wrapMode
+  const effectiveWrapMode = createMemo(() => props.wrapMode ?? wrapMode());
+
   return (
     <Show when={props.diff.length > 0}>
       <diff
@@ -119,7 +137,7 @@ export function DiffViewer(props: DiffViewerProps) {
         filetype={props.filetype}
         syntaxStyle={props.syntaxStyle}
         showLineNumbers={props.showLineNumbers ?? true}
-        wrapMode={props.wrapMode ?? "word"}
+        wrapMode={effectiveWrapMode()}
         conceal={props.conceal ?? false}
         addedBg={diffColors().addedBg}
         removedBg={diffColors().removedBg}

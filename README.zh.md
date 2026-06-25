@@ -1,19 +1,19 @@
 # Crab CLI
 
-English | [简体中文](README.zh.md)
+[English](README.md) | 简体中文
 
-> AI Coding Assistant — Multi-Agent 协作 + MCP 原生 Runtime + TUI 终端智能编程助手
+> AI 编程助手 — 多代理协作 + MCP 原生运行时 + TUI 终端智能编程助手
 
 基于 `Bun + TypeScript + OpenTUI/Solid` 构建，支持多模型、多代理并行协作、MCP 原生集成。
 
 ## 核心特性
 
-- **Multi-Agent 协作** — 模型自主决策子代理数量，Git Worktree 隔离 + 合并冲突解决 + 计划审批
-- **MCP 原生 Runtime** — 完整 MCP 客户端 + 22 个预置 Catalog + Roots 协议 + OAuth + 风险分类
+- **多代理协作** — 模型自主决策子代理数量，Git Worktree 隔离 + 合并冲突解决 + 计划审批
+- **MCP 原生运行时** — 完整 MCP 客户端 + 22 个预置目录 + Roots 协议 + OAuth + 风险分类
 - **终端原生 TUI** — 键盘驱动，OpenTUI/Solid 渲染，30+ 预置主题，Shiki 代码高亮
 - **安全权限体系** — 敏感命令检测 + 审计日志 + 重放防护 + SSH 验证 + 命令注入检测
-- **灵活配置** — BYOM（自带模型），多 Profile，热重载，远程配置，Workspace 多工作区
-- **性能监控** — LRU 缓存 + 令牌桶限流 + 背压处理 + CPU/Memory 监控 + 熔断器 + 降级探测
+- **灵活配置** — 自带模型（BYOM），多配置档案，热重载，远程配置，多工作区
+- **性能监控** — LRU 缓存 + 令牌桶限流 + 背压处理 + CPU/内存监控 + 熔断器 + 降级探测
 
 ## 安装
 
@@ -61,7 +61,7 @@ crab setup
 # 或手动创建 ~/.crab/config.json
 ```
 
-最小配置示例:
+最小配置示例：
 
 ```json
 {
@@ -73,7 +73,7 @@ crab setup
   "providerConfig": {
     "openai": {
       "defaultModel": "gpt-4o",
-      "apiKey": "your-api-key",
+      "apiKey": "你的-API-密钥",
       "requestMethod": "chat",
       "baseURL": "https://api.openai.com/v1",
       "modelList": ["gpt-4o"]
@@ -96,23 +96,23 @@ crab mcp search "数据库"                 # 搜索 MCP 服务器目录
 crab mcp install postgres               # 安装 MCP 服务器
 crab agent generate "代码审查专家"         # AI 生成 Agent 配置
 crab --schedule "0 9 * * *" "任务"       # 创建定时任务
-crab --yolo --ask "修复构建错误"           # YOLO 模式
+crab --yolo --ask "修复构建错误"           # YOLO 模式（跳过确认）
 crab --continue <session-id>            # 继续上次会话
 ```
 
-## 支持的 LLM Provider
+## 支持的 LLM 提供商
 
-| Provider | 认证方式 | 说明 |
-|----------|---------|------|
-| OpenAI | API Key | GPT 系列 |
-| Anthropic | API Key | Claude 系列 |
-| Google | API Key | Gemini 系列 |
-| Azure OpenAI | API Key | Azure 部署 |
+| 提供商 | 认证方式 | 说明 |
+|--------|---------|------|
+| OpenAI | API 密钥 | GPT 系列 |
+| Anthropic | API 密钥 | Claude 系列 |
+| Google | API 密钥 | Gemini 系列 |
+| Azure OpenAI | API 密钥 | Azure 部署 |
 | AWS Bedrock | SigV4 签名 | 多模型 |
-| OpenRouter | API Key | 统一 API |
-| xAI | API Key | Grok 系列 |
+| OpenRouter | API 密钥 | 统一 API |
+| xAI | API 密钥 | Grok 系列 |
 | GitHub Copilot | OAuth | Copilot 模型 |
-| 自定义 | API Key | OpenAI 兼容接口 |
+| 自定义 | API 密钥 | OpenAI 兼容接口 |
 
 ## TUI 快捷键
 
@@ -122,12 +122,12 @@ crab --continue <session-id>            # 继续上次会话
 | `Ctrl+P` | 命令面板 |
 | `Ctrl+X` | Leader 键（快捷入口） |
 | `Ctrl+Z` | 终端挂起/恢复 |
-| `Ctrl+Shift+R` | Revert 上一轮 |
-| `Ctrl+Shift+U` | Unrevert |
-| `Ctrl+Shift+T` | 切换 Thinking 模式 |
+| `Ctrl+Shift+R` | 撤销上一轮 |
+| `Ctrl+Shift+U` | 恢复撤销 |
+| `Ctrl+Shift+T` | 切换思考模式 |
 | `ESC` | 中断/清除 |
 | `/` | 斜杠命令 |
-| `@` | 文件/Agent/Skill 引用 |
+| `@` | 文件/代理/技能引用 |
 | `!` | Shell 模式前缀 |
 
 ## 目录结构
@@ -140,14 +140,14 @@ crab --continue <session-id>            # 继续上次会话
 ├── auth/                    # 认证数据
 ├── data/                    # 运行时数据（数据库/会话/任务）
 ├── logs/                    # 日志 + 审计
-├── skills/                  # Skill 文件
+├── skills/                  # 技能文件
 ├── hooks/                   # Hook 配置
 ├── themes/                  # 自定义主题
-├── agents/                  # 生成的 Agent 定义
+├── agents/                  # 生成的代理定义
 └── tmp/                     # 临时文件
 ```
 
-## 构建 & 测试
+## 构建和测试
 
 ```bash
 bun run build                # 构建 CLI
@@ -168,6 +168,6 @@ bun run security:check       # 安全扫描
 - **流式处理**: Effect Stream（可选）+ AsyncIterable
 - **可观测性**: OpenTelemetry + Prometheus
 
-## License
+## 开源协议
 
 MIT

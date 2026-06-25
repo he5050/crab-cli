@@ -34,6 +34,7 @@ import {
   DIFF_VIEWER_SHOW_FILE_TREE_KEY,
   DIFF_VIEWER_SINGLE_PATCH_KEY,
   DIFF_VIEWER_VIEW_KEY,
+  DIFF_WRAP_MODE_KEY,
   type DiffViewMode,
   buildDiffTreeRows,
   clampDiffTreeRowIndex,
@@ -105,6 +106,7 @@ function DiffPluginRoute(props: { route: PluginRouteData }) {
   );
   const [focus, setFocus] = createSignal<"files" | "patches">("files");
   const [singlePatch, setSinglePatch] = createSignal(kv.get<boolean>(DIFF_VIEWER_SINGLE_PATCH_KEY) === true);
+  const [wrapMode, setWrapMode] = createSignal<"word" | "none">(kv.get<"word" | "none">(DIFF_WRAP_MODE_KEY) ?? "word");
   const [reviewedFileNames, setReviewedFileNames] = createSignal<string[]>([]);
   let patchScroll: { scrollBy?: (offset: number) => void; height?: number } | undefined;
   const data = () => props.route.data;
@@ -249,6 +251,15 @@ function DiffPluginRoute(props: { route: PluginRouteData }) {
       event.stopPropagation();
       return;
     }
+    if (event.name === "w") {
+      setWrapMode((current) => {
+        const next = current === "word" ? "none" : "word";
+        kv.set(DIFF_WRAP_MODE_KEY, next);
+        return next;
+      });
+      event.stopPropagation();
+      return;
+    }
     if (event.name === "m") {
       const row = highlightedRow();
       toggleReviewed(focus() === "files" && row?.kind === "file" ? row.path : selectedPath());
@@ -362,11 +373,12 @@ function DiffPluginRoute(props: { route: PluginRouteData }) {
           <text fg={theme.colors.muted}>
             {sourceLabel()} · {summary().files} 个文件 · +{summary().additions} -{summary().deletions} · {view()} ·{" "}
             {singlePatch() ? "单个补丁" : "全部补丁"} · 已审阅 {reviewedFileNames().length}/{summary().files} · 焦点{" "}
-            {focus()} · 来源 {clampSourceIndex(sourceIndex(), sources()) + 1}/{Math.max(sources().length, 1)}
+            {focus()} · 来源 {clampSourceIndex(sourceIndex(), sources()) + 1}/{Math.max(sources().length, 1)} · 换行{" "}
+            {wrapMode() === "word" ? "开" : "关"}
           </text>
         </box>
         <text fg={theme.colors.muted}>
-          q/Esc 返回 · ? 帮助 · Tab 切换焦点 · b 文件树 · s 单补丁 · m 标记审阅 · v 视图 · d 来源
+          q/Esc 返回 · ? 帮助 · Tab 切换焦点 · b 文件树 · s 单补丁 · m 标记审阅 · v 视图 · d 来源 · w 换行
         </text>
       </box>
 
@@ -477,7 +489,13 @@ function DiffPluginRoute(props: { route: PluginRouteData }) {
               verticalScrollbarOptions={{ visible: false }}
               horizontalScrollbarOptions={{ visible: false }}
             >
-              <DiffViewer diff={activeDiff()} filename={activeFilename()} showLineNumbers={true} view={view()} />
+              <DiffViewer
+                diff={activeDiff()}
+                filename={activeFilename()}
+                showLineNumbers={true}
+                view={view()}
+                wrapMode={wrapMode()}
+              />
             </scrollbox>
           </box>
         </box>

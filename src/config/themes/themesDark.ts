@@ -1,15 +1,16 @@
 import type { ThemeDefinition } from "../types/themeTypes";
 import { OPENCODE_DARK_EXTENDED, OPENCODE_LIGHT_EXTENDED } from "./themesOpenCodeExtended";
 
-// TUI parity source contract: OpenCode extended tokens include selectedListItemText.
+import { ONE_DARK_DARK_EXTENDED, ONE_DARK_LIGHT_EXTENDED } from "./themesOneDarkExtended";
+
 export const ONE_DARK: ThemeDefinition = {
   colors: {
     accent: "#e5c07b",
     background: "#282c34",
-    border: "#5c6370",
+    border: "#3b4048",
     error: "#e06c75",
-    info: "#61afef",
-    muted: "#8b93a3",
+    info: "#56b6c2",
+    muted: "#5c6370",
     primary: "#61afef",
     secondary: "#c678dd",
     success: "#98c379",
@@ -22,7 +23,7 @@ export const ONE_DARK: ThemeDefinition = {
     background: "#fafafa",
     border: "#e5e5e6",
     error: "#e45649",
-    info: "#4078f2",
+    info: "#0184bc",
     muted: "#a0a1a7",
     primary: "#4078f2",
     secondary: "#a626a4",
@@ -33,6 +34,8 @@ export const ONE_DARK: ThemeDefinition = {
   mode: "dark",
   name: "one-dark",
   palette: ["#e06c75", "#d19a66", "#98c379", "#61afef"],
+  extendedColors: ONE_DARK_DARK_EXTENDED,
+  lightExtendedColors: ONE_DARK_LIGHT_EXTENDED,
 };
 
 export const DRACULA: ThemeDefinition = {

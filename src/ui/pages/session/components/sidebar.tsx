@@ -38,12 +38,15 @@ import { AppEvent } from "@bus";
 import { VERSION } from "@/config/version";
 import {
   BORDER_SUBTLE,
+  SCROLLBAR_FOREGROUND,
+  SCROLLBAR_TRACK,
   SIDEBAR_WIDTH,
   SURFACE_PANEL,
   TEXT_BOLD,
   TEXT_MUTED,
   TEXT_PRIMARY,
 } from "@/ui/themes/sessionTokens";
+import { getScrollAcceleration } from "@/ui/utils/scrollAcceleration";
 import { clearSidebarSections, getSidebarSections, registerSidebarSection } from "./sidebarRegistry";
 import type { AgentInfo } from "@agent";
 import { getModeMeta } from "@/agent/prompt/modes";
@@ -784,6 +787,7 @@ export function SidebarPanel(props: {
   const sidebarWidth = createMemo(() => props.width ?? SIDEBAR_WIDTH);
   const sidebarColors = createMemo(() => readableSidebarColors(props.colors));
   const modifiedFiles = createMemo(() => buildModifiedFilesFromMessages(props.messages));
+  const scrollAccel = createMemo(() => getScrollAcceleration());
   const sessionTitle = createMemo(() => {
     const firstUserMsg = props.messages.find((message) => message.role === "user");
     if (!firstUserMsg) {
@@ -884,7 +888,19 @@ export function SidebarPanel(props: {
         </box>
       </SidebarSlot>
 
-      <scrollbox flexGrow={1} backgroundColor={sidebarPanelColor(props.extended)}>
+      <scrollbox
+        flexGrow={1}
+        minHeight={0}
+        backgroundColor={sidebarPanelColor(props.extended)}
+        scrollAcceleration={scrollAccel()}
+        verticalScrollbarOptions={{
+          trackOptions: {
+            backgroundColor: SCROLLBAR_TRACK,
+            foregroundColor: SCROLLBAR_FOREGROUND,
+          },
+          visible: true,
+        }}
+      >
         <SidebarSlot name="sidebar_content">
           <box
             flexDirection="column"

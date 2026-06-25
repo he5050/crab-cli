@@ -81,7 +81,7 @@ export function SkillListPanel(_props?: SkillListPanelProps) {
 
   return (
     <box position="absolute" bottom="100%" left={0} width="100%" zIndex={100}>
-      <box flexDirection="column" borderStyle="rounded" borderColor="cyan" padding={1}>
+      <box flexDirection="column" borderStyle="rounded" borderColor={theme.colors.info} padding={1}>
         <text>
           ◆ Skill 列表 ({skillManager.size} 个{showDisabled() ? ", with disabled" : ""})
         </text>
@@ -103,7 +103,7 @@ export function SkillListPanel(_props?: SkillListPanelProps) {
                       : toolGeneric;
               const disabled = skillManager.isDisabled(skill.name);
               return (
-                <text fg={isSelected ? "cyan" : undefined}>
+                <text fg={isSelected ? theme.colors.info : undefined}>
                   {isSelected ? "▸ " : "  "}
                   {sourceIcon} {skill.name}
                   {disabled ? " [off]" : ""}

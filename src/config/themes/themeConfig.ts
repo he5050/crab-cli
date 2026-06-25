@@ -266,7 +266,7 @@ export function listThemesByMode(mode: "dark" | "light"): ThemeDefinition[] {
  * 获取默认主题名称。
  */
 export function getDefaultTheme(): string {
-  return "opencode";
+  return "one-dark";
 }
 
 /**

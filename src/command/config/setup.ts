@@ -27,6 +27,7 @@ import {
   createBedrockConfig,
   createXaiConfig,
   createCopilotConfig,
+  createCloudflareConfig,
   getCopilotToken,
   exchangeCopilotToken,
   EXTENDED_PROVIDERS,
@@ -42,6 +43,12 @@ export const PROVIDERS: ProviderOption[] = [
   { defaultModel: "anthropic.claude-3-5-sonnet-20241022-v2:0", id: "bedrock", method: "chat", name: "AWS Bedrock" },
   { defaultModel: "grok-3", id: "xai", method: "chat", name: "xAI Grok" },
   { defaultModel: "gpt-4o", id: "github-copilot", method: "chat", name: "GitHub Copilot" },
+  {
+    defaultModel: "@cf/meta/llama-3.1-8b-instruct",
+    id: "cloudflare",
+    method: "chat",
+    name: "Cloudflare Workers AI",
+  },
   { defaultModel: "gpt-4o", id: "custom", method: "chat", name: "Custom (OpenAI-compatible)" },
 ];
 
@@ -176,6 +183,18 @@ export async function setupCommand(): Promise<void> {
       apiKey = azureApiKey;
       const azureConfig = createAzureConfig(resourceName, azureApiKey, deployment);
       providerConfig = { [selected.id]: azureConfig };
+    } else if (selected.id === "cloudflare") {
+      // Cloudflare Workers AI: accountId + API Key
+      console.log();
+      const accountId = (await rl.question("  Cloudflare Account ID: ")).trim();
+      apiKey = (await rl.question("  Cloudflare API Key: ")).trim();
+
+      if (!accountId || !apiKey) {
+        console.log("\n  \x1b[31m✗\x1b[0m Account ID 和 API Key 不能为空。配置已取消。\n");
+        process.exit(1);
+      }
+
+      providerConfig = { [selected.id]: createCloudflareConfig(accountId, apiKey, selected.defaultModel) };
     } else if (selected.id === "openrouter" || selected.id === "xai") {
       // OpenRouter / xAI: API Key
       console.log();

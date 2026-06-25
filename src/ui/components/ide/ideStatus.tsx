@@ -33,6 +33,7 @@
 
 import { Show, createSignal, onCleanup } from "solid-js";
 import { useEventBus } from "@/ui/contexts/eventBus";
+import { useTheme } from "@/ui/contexts/theme";
 import { AppEvent } from "@bus";
 import { vscodeConnection } from "@/ide/client";
 import type { ConnectionStatus } from "@/ide/types";
@@ -48,6 +49,7 @@ import { connectionIcon } from "@/ui/utils/icon";
  */
 export function IDEStatusBar() {
   const eventBus = useEventBus();
+  const theme = useTheme();
   const [status, setStatus] = createSignal<ConnectionStatus>(vscodeConnection.getStatus());
   const [activeFile, setActiveFile] = createSignal<string>("");
 
@@ -94,16 +96,16 @@ export function IDEStatusBar() {
   const statusColor = (): string => {
     switch (status()) {
       case "connected": {
-        return "#4caf50";
+        return theme.colors.success;
       }
       case "connecting": {
-        return "#f0c040";
+        return theme.colors.warning;
       }
       case "error": {
-        return "#f44336";
+        return theme.colors.error;
       }
       case "disconnected": {
-        return "#666";
+        return theme.colors.muted;
       }
     }
   };

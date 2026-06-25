@@ -53,8 +53,6 @@ export function getRoleColors(colors: ThemeColors) {
   };
 }
 
-const SESSION_TEXT_COLOR = "#f5f5f5";
-
 // ─── 边框字符配置 ──────────────────────────────────────────
 
 export const EmptyBorder = {
@@ -109,19 +107,19 @@ export function createSubtleSyntaxStyle(extended: ExtendedThemeColors) {
   return generateSubtleSyntax(extended);
 }
 
-/** 保留旧导出名，向后兼容(使用 dark 默认色) */
+/** 保留旧导出名，向后兼容(使用 One Dark 基础色) */
 export const defaultSyntaxStyle = createSyntaxStyle({
   accent: "#e5c07b",
   background: "#282c34",
-  border: "#3e4451",
+  border: "#3b4048",
   error: "#e06c75",
-  info: "#61afef",
+  info: "#56b6c2",
   muted: "#5c6370",
   primary: "#61afef",
   secondary: "#c678dd",
   success: "#98c379",
-  text: "#abb2bf",
-  warning: "#e5c07b",
+  text: "#d8dee9",
+  warning: "#d19a66",
 });
 
 // ─── Thinking Part 渲染 ───────────────
@@ -286,7 +284,7 @@ function highlightFg(kind: HighlightSegment["kind"], colors: ThemeColors): strin
   if (kind === "file") {
     return colors.info;
   }
-  return SESSION_TEXT_COLOR;
+  return colors.text;
 }
 
 function splitHighlights(text: string): HighlightSegment[] {

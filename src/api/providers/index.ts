@@ -7,6 +7,7 @@
  *   - bedrock.ts        — AWS Bedrock（SigV4 签名）
  *   - xai.ts            — xAI Grok
  *   - githubCopilot.ts — GitHub Copilot（OAuth Device Flow）
+ *   - cloudflare.ts    — Cloudflare Workers AI
  */
 export { OPENROUTER_DEFAULTS, createOpenRouterConfig, fetchOpenRouterModels } from "./openrouter";
 export {
@@ -36,6 +37,7 @@ export {
   exchangeCopilotToken,
   createCopilotConfig,
 } from "./githubCopilot";
+export { CLOUDFLARE_DEFAULTS, CLOUDFLARE_MODELS, buildCloudflareBaseURL, createCloudflareConfig } from "./cloudflare";
 
 /** 所有扩展 Provider 的元信息 */
 export interface ExtendedProviderMeta {
