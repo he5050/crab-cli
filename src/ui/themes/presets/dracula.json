@@ -1,0 +1,75 @@
+{
+  "name": "dracula-preset",
+  "label": "Dracula (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#bd93f9",
+    "secondary": "#ff79c6",
+    "accent": "#f1fa8c",
+    "error": "#ff5555",
+    "warning": "#ffb86c",
+    "success": "#50fa7b",
+    "info": "#8be9fd",
+    "muted": "#6272a4",
+    "text": "#f8f8f2",
+    "background": "#282a36",
+    "border": "#44475a"
+  },
+  "extendedColors": {
+    "textMuted": "#6272a4",
+    "backgroundMenu": "#21222c",
+    "selectedListItemText": "#282a36",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#282a36",
+      "panel": "#21222c",
+      "element": "#1e1f29"
+    },
+    "borderExt": {
+      "main": "#44475a",
+      "subtle": "#343746",
+      "active": "#6272a4"
+    },
+    "diff": {
+      "added": "#50fa7b",
+      "removed": "#ff5555",
+      "context": "#6272a4",
+      "hunkHeader": "#8be9fd",
+      "highlightAdded": "#50fa7b",
+      "highlightRemoved": "#ff5555",
+      "addedBg": "#1e2d24",
+      "removedBg": "#2d1e22",
+      "contextBg": "#282a36",
+      "lineNumber": "#6272a4",
+      "addedLineNumberBg": "#1a2820",
+      "removedLineNumberBg": "#281a1e"
+    },
+    "markdown": {
+      "text": "#f8f8f2",
+      "heading": "#bd93f9",
+      "link": "#8be9fd",
+      "linkText": "#8be9fd",
+      "code": "#50fa7b",
+      "blockQuote": "#ffb86c",
+      "emph": "#ffb86c",
+      "strong": "#ff79c6",
+      "horizontalRule": "#44475a",
+      "listItem": "#ff79c6",
+      "listEnumeration": "#8be9fd",
+      "image": "#ff79c6",
+      "imageText": "#8be9fd",
+      "codeBlock": "#f8f8f2"
+    },
+    "syntax": {
+      "comment": "#6272a4",
+      "keyword": "#ff79c6",
+      "func": "#50fa7b",
+      "variable": "#f8f8f2",
+      "string": "#f1fa8c",
+      "number": "#bd93f9",
+      "type": "#8be9fd",
+      "operator": "#ff79c6",
+      "punctuation": "#f8f8f2"
+    }
+  }
+}

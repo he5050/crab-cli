@@ -1,0 +1,75 @@
+{
+  "name": "nord-preset",
+  "label": "Nord (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#88c0d0",
+    "secondary": "#b48ead",
+    "accent": "#ebcb8b",
+    "error": "#bf616a",
+    "warning": "#d08770",
+    "success": "#a3be8c",
+    "info": "#81a1c1",
+    "muted": "#4c566a",
+    "text": "#e5e9f0",
+    "background": "#2e3440",
+    "border": "#3b4252"
+  },
+  "extendedColors": {
+    "textMuted": "#4c566a",
+    "backgroundMenu": "#242933",
+    "selectedListItemText": "#2e3440",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#2e3440",
+      "panel": "#242933",
+      "element": "#1e222a"
+    },
+    "borderExt": {
+      "main": "#3b4252",
+      "subtle": "#2e3440",
+      "active": "#4c566a"
+    },
+    "diff": {
+      "added": "#a3be8c",
+      "removed": "#bf616a",
+      "context": "#4c566a",
+      "hunkHeader": "#81a1c1",
+      "highlightAdded": "#a3be8c",
+      "highlightRemoved": "#bf616a",
+      "addedBg": "#1e2a1e",
+      "removedBg": "#2a1e20",
+      "contextBg": "#2e3440",
+      "lineNumber": "#4c566a",
+      "addedLineNumberBg": "#1a2418",
+      "removedLineNumberBg": "#24181a"
+    },
+    "markdown": {
+      "text": "#e5e9f0",
+      "heading": "#88c0d0",
+      "link": "#81a1c1",
+      "linkText": "#81a1c1",
+      "code": "#a3be8c",
+      "blockQuote": "#d08770",
+      "emph": "#d08770",
+      "strong": "#b48ead",
+      "horizontalRule": "#3b4252",
+      "listItem": "#b48ead",
+      "listEnumeration": "#81a1c1",
+      "image": "#b48ead",
+      "imageText": "#81a1c1",
+      "codeBlock": "#e5e9f0"
+    },
+    "syntax": {
+      "comment": "#4c566a",
+      "keyword": "#81a1c1",
+      "func": "#88c0d0",
+      "variable": "#d8dee9",
+      "string": "#a3be8c",
+      "number": "#b48ead",
+      "type": "#8fbcbb",
+      "operator": "#81a1c1",
+      "punctuation": "#e5e9f0"
+    }
+  }
+}

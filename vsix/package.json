@@ -1,0 +1,98 @@
+{
+  "name": "crab-cli",
+  "displayName": "Crab CLI",
+  "description": "Crab CLI — AI-powered terminal assistant integration for VSCode",
+  "version": "0.1.0",
+  "publisher": "crab-dev",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Terminal",
+    "Programming Languages"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "configuration": [
+      {
+        "id": "crab-cli.general",
+        "title": "Crab CLI",
+        "properties": {
+          "crab-cli.terminalMode": {
+            "type": "string",
+            "default": "sidebar",
+            "enum": [
+              "sidebar",
+              "split"
+            ],
+            "description": "Terminal display mode"
+          },
+          "crab-cli.startupCommand": {
+            "type": "string",
+            "default": "crab",
+            "description": "Startup command for crab CLI"
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "crab-cli.openTerminal",
+        "title": "Crab CLI: Open Terminal"
+      },
+      {
+        "command": "crab-cli.addFilePath",
+        "title": "Crab CLI: Add File Path"
+      },
+      {
+        "command": "crab-cli.addFolderPath",
+        "title": "Crab CLI: Add Folder Path"
+      },
+      {
+        "command": "crab-cli.sendSelectionLocation",
+        "title": "Crab CLI: Send Selection Location"
+      },
+      {
+        "command": "crab-cli.showDiff",
+        "title": "Crab CLI: Show Diff"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "crab-cli.addFilePath",
+          "when": "explorerResourceIsFolder == false"
+        },
+        {
+          "command": "crab-cli.addFolderPath",
+          "when": "explorerResourceIsFolder"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "crab-cli.sendSelectionLocation",
+          "when": "editorHasSelection"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "watch": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch",
+    "package": "npm run build && vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/ws": "^8.18.1",
+    "@vscode/vsce": "^3.9.2",
+    "esbuild": "^0.28.0",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "ws": "^8.21.0"
+  }
+}

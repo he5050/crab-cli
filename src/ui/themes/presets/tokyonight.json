@@ -1,0 +1,75 @@
+{
+  "name": "tokyonight-preset",
+  "label": "Tokyo Night (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#7aa2f7",
+    "secondary": "#bb9af7",
+    "accent": "#e0af68",
+    "error": "#f7768e",
+    "warning": "#ff9e64",
+    "success": "#9ece6a",
+    "info": "#7dcfff",
+    "muted": "#565f89",
+    "text": "#c0caf5",
+    "background": "#1a1b26",
+    "border": "#2a2e3f"
+  },
+  "extendedColors": {
+    "textMuted": "#565f89",
+    "backgroundMenu": "#16161e",
+    "selectedListItemText": "#1a1b26",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#1a1b26",
+      "panel": "#16161e",
+      "element": "#13131a"
+    },
+    "borderExt": {
+      "main": "#2a2e3f",
+      "subtle": "#1a1b26",
+      "active": "#414868"
+    },
+    "diff": {
+      "added": "#9ece6a",
+      "removed": "#f7768e",
+      "context": "#565f89",
+      "hunkHeader": "#7aa2f7",
+      "highlightAdded": "#9ece6a",
+      "highlightRemoved": "#f7768e",
+      "addedBg": "#1a2a16",
+      "removedBg": "#2a1a1e",
+      "contextBg": "#1a1b26",
+      "lineNumber": "#565f89",
+      "addedLineNumberBg": "#162412",
+      "removedLineNumberBg": "#241618"
+    },
+    "markdown": {
+      "text": "#c0caf5",
+      "heading": "#7aa2f7",
+      "link": "#7dcfff",
+      "linkText": "#7dcfff",
+      "code": "#9ece6a",
+      "blockQuote": "#e0af68",
+      "emph": "#e0af68",
+      "strong": "#bb9af7",
+      "horizontalRule": "#2a2e3f",
+      "listItem": "#bb9af7",
+      "listEnumeration": "#7dcfff",
+      "image": "#bb9af7",
+      "imageText": "#7dcfff",
+      "codeBlock": "#c0caf5"
+    },
+    "syntax": {
+      "comment": "#565f89",
+      "keyword": "#bb9af7",
+      "func": "#7aa2f7",
+      "variable": "#c0caf5",
+      "string": "#9ece6a",
+      "number": "#ff9e64",
+      "type": "#e0af68",
+      "operator": "#7dcfff",
+      "punctuation": "#c0caf5"
+    }
+  }
+}

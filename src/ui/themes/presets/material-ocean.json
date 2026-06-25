@@ -1,0 +1,75 @@
+{
+  "name": "material-ocean-preset",
+  "label": "Material Ocean (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#82aaff",
+    "secondary": "#c792ea",
+    "accent": "#ffcb6b",
+    "error": "#ff5370",
+    "warning": "#ffcb6b",
+    "success": "#c3e88d",
+    "info": "#89ddff",
+    "muted": "#546e7a",
+    "text": "#eeffff",
+    "background": "#0f111a",
+    "border": "#1b1f2a"
+  },
+  "extendedColors": {
+    "textMuted": "#546e7a",
+    "backgroundMenu": "#0a0c14",
+    "selectedListItemText": "#0f111a",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#0f111a",
+      "panel": "#0a0c14",
+      "element": "#070910"
+    },
+    "borderExt": {
+      "main": "#1b1f2a",
+      "subtle": "#0a0c14",
+      "active": "#546e7a"
+    },
+    "diff": {
+      "added": "#c3e88d",
+      "removed": "#ff5370",
+      "context": "#546e7a",
+      "hunkHeader": "#89ddff",
+      "highlightAdded": "#c3e88d",
+      "highlightRemoved": "#ff5370",
+      "addedBg": "#0e1a0a",
+      "removedBg": "#1a0a0e",
+      "contextBg": "#0f111a",
+      "lineNumber": "#546e7a",
+      "addedLineNumberBg": "#0a1408",
+      "removedLineNumberBg": "#14080a"
+    },
+    "markdown": {
+      "text": "#eeffff",
+      "heading": "#82aaff",
+      "link": "#89ddff",
+      "linkText": "#89ddff",
+      "code": "#c3e88d",
+      "blockQuote": "#ffcb6b",
+      "emph": "#ffcb6b",
+      "strong": "#c792ea",
+      "horizontalRule": "#1b1f2a",
+      "listItem": "#c792ea",
+      "listEnumeration": "#89ddff",
+      "image": "#c792ea",
+      "imageText": "#89ddff",
+      "codeBlock": "#eeffff"
+    },
+    "syntax": {
+      "comment": "#546e7a",
+      "keyword": "#c792ea",
+      "func": "#82aaff",
+      "variable": "#eeffff",
+      "string": "#c3e88d",
+      "number": "#f78c6c",
+      "type": "#ffcb6b",
+      "operator": "#89ddff",
+      "punctuation": "#eeffff"
+    }
+  }
+}

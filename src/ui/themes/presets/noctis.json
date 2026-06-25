@@ -1,0 +1,75 @@
+{
+  "name": "noctis-preset",
+  "label": "Noctis (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#74ade8",
+    "secondary": "#c678dd",
+    "accent": "#e5c07b",
+    "error": "#e06c75",
+    "warning": "#d19a66",
+    "success": "#98c379",
+    "info": "#56b6c2",
+    "muted": "#5c6370",
+    "text": "#c5c8c6",
+    "background": "#061229",
+    "border": "#132342"
+  },
+  "extendedColors": {
+    "textMuted": "#5c6370",
+    "backgroundMenu": "#040e1f",
+    "selectedListItemText": "#061229",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#061229",
+      "panel": "#040e1f",
+      "element": "#030a16"
+    },
+    "borderExt": {
+      "main": "#132342",
+      "subtle": "#040e1f",
+      "active": "#5c6370"
+    },
+    "diff": {
+      "added": "#98c379",
+      "removed": "#e06c75",
+      "context": "#5c6370",
+      "hunkHeader": "#56b6c2",
+      "highlightAdded": "#98c379",
+      "highlightRemoved": "#e06c75",
+      "addedBg": "#0e1a0a",
+      "removedBg": "#1a0a0e",
+      "contextBg": "#061229",
+      "lineNumber": "#5c6370",
+      "addedLineNumberBg": "#0a1408",
+      "removedLineNumberBg": "#14080a"
+    },
+    "markdown": {
+      "text": "#c5c8c6",
+      "heading": "#74ade8",
+      "link": "#56b6c2",
+      "linkText": "#56b6c2",
+      "code": "#98c379",
+      "blockQuote": "#d19a66",
+      "emph": "#d19a66",
+      "strong": "#c678dd",
+      "horizontalRule": "#132342",
+      "listItem": "#c678dd",
+      "listEnumeration": "#56b6c2",
+      "image": "#c678dd",
+      "imageText": "#56b6c2",
+      "codeBlock": "#c5c8c6"
+    },
+    "syntax": {
+      "comment": "#5c6370",
+      "keyword": "#c678dd",
+      "func": "#74ade8",
+      "variable": "#e06c75",
+      "string": "#98c379",
+      "number": "#d19a66",
+      "type": "#e5c07b",
+      "operator": "#56b6c2",
+      "punctuation": "#c5c8c6"
+    }
+  }
+}

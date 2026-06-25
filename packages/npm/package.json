@@ -1,0 +1,12 @@
+{
+  "name": "crab-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "npm launcher for verified crab-cli release binaries",
+  "bin": {
+    "crab": "./bin/crab.js"
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js"
+  }
+}

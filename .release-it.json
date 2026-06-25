@@ -1,0 +1,41 @@
+{
+  "$schema": "https://unpkg.com/release-it@20/schema/release-it.json",
+  "git": {
+    "commitMessage": "chore(release): v${version}",
+    "tagName": "v${version}",
+    "tagAnnotation": "Release v${version}",
+    "push": true,
+    "requireBranch": "main",
+    "requireCleanWorkingDir": true
+  },
+  "npm": {
+    "publish": true
+  },
+  "github": {
+    "release": true,
+    "releaseName": "v${version}",
+    "draft": true,
+    "autoGenerate": true
+  },
+  "plugins": {
+    "@release-it/bumper": {
+      "out": [
+        {
+          "file": "package.json",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  "hooks": {
+    "before:init": [
+      "bun run test:typecheck",
+      "bun run security:check",
+      "bun test"
+    ],
+    "after:bump": [
+      "bun run release:local"
+    ],
+    "after:release": "echo 'Release v${version} published. Verify GitHub Actions artifacts.'"
+  }
+}

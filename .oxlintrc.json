@@ -1,0 +1,105 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["typescript", "unicorn", "oxc"],
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn",
+		"perf": "warn",
+		"style": "warn"
+	},
+	"rules": {
+		"@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }], // 未使用变量会警告，_ 开头的参数/变量可忽略
+		"no-console": "off", // 允许使用 console 输出
+		"no-debugger": "warn", // debugger 语句会发出警告
+		"unicorn/no-null": "off", // 允许使用 null
+		"unicorn/prefer-ternary": "off", // 不强制禁止三元表达式
+		"unicorn/prefer-response-static-json": "off", // 允许返回静态 JSON 响应
+		"unicorn/custom-error-definition": "off", // 允许自定义错误类定义
+		"sort-keys": "off", // 不强制对象键按字母顺序排序
+		"sort-imports": "off", // 不强制导入语句排序
+		"no-magic-numbers": "off", // 不强制禁止魔法数字
+		"no-await-in-loop": "off", // 允许在循环中使用 await
+		"no-ternary": "off", // 允许使用三元运算符
+		"no-nested-ternary": "off", // 允许嵌套三元运算符
+		"func-style": "off", // 不强制函数声明或函数表达式风格
+		"func-names": "off", // 允许匿名函数
+		"no-script-url": "off", // 允许使用 script: URL
+		"max-statements": "off", // 不限制函数中的语句数量
+		"max-params": "off", // 不限制函数参数个数
+		"id-length": "off", // 不限制标识符长度
+		"no-shadow": "off", // 允许变量遮蔽外层作用域中的变量
+		"no-continue": "off", // 允许 continue 语句
+		"no-unmodified-loop-condition": "off", // 允许循环条件在循环体内不修改
+		"no-duplicate-imports": "off", // 不强制禁止相同模块的重复导入
+		"unicorn/filename-case": "off", // 不强制文件名命名格式
+		"unicorn/no-nested-ternary": "off", // 允许嵌套三元运算符
+		"unicorn/consistent-function-scoping": "off", // 不强制一致的函数作用域风格
+		"unicorn/prefer-spread": "off", // 不强制使用 spread 代替 apply
+		"unicorn/numeric-separators-style": "off", // 不强制数字分隔符风格
+		"unicorn/catch-error-name": "off", // 不强制 catch 错误参数命名
+		"unicorn/no-await-expression-member": "off", // 允许 await 语句中访问成员表达式
+		"unicorn/no-useless-collection-argument": "off", // 允许 Collection 构造器接受参数
+		"unicorn/prefer-structured-clone": "off", // 不强制使用 structuredClone
+		"unicorn/switch-case-braces": "off", // 不强制 switch/case 使用花括号包裹
+		"no-unneeded-ternary": "off", // 允许不必要的三元表达式
+		"@typescript-eslint/no-empty-interface": "off", // 允许空接口
+		"@typescript-eslint/no-extraneous-class": "off", // 允许只有静态成员或空类
+		"unicorn/prefer-logical-operator-over-ternary": "off", // 不强制用逻辑运算替代三元表达式
+		"unicorn/no-array-sort": "off", // 允许数组 sort
+		"guard-for-in": "off", // 允许 for-in 不加 hasOwnProperty 检查
+		"no-useless-constructor": "off", // 允许空构造函数
+		"default-param-last": "off", // 不强制默认参数放在最后
+		"curly": "off", // 不强制控制语句使用花括号
+		"@typescript-eslint/prefer-for-of": "off", // 不强制使用 for-of
+		"prefer-named-capture-group": "off", // 不强制命名捕获组
+		"prefer-const": "off", // 不强制将可变变量改为 const
+		"unicorn/prefer-global-this": "off", // 不强制使用 globalThis
+		"unicorn/prefer-add-event-listener": "off", // 不强制使用 addEventListener
+		"init-declarations": "off", // 不强制变量初始化声明
+		"new-cap": "off", // 不强制构造函数首字母大写
+		"no-unexpected-multiline": "off", // 允许多行表达式换行样式
+		"no-useless-concat": "off", // 允许无意义的字符串拼接
+		"no-useless-call": "off", // 允许无意义的 call/apply 调用
+		"oxc/no-map-spread": "off", // 不强制禁止 Map spread
+		"oxc/no-accumulating-spread": "off", // 不强制禁止累积 spread
+		"logical-assignment-operators": "off", // 不强制逻辑赋值运算符
+		"unicorn/prefer-array-index-of": "off", // 不强制使用 Array#indexOf
+		"no-underscore-dangle": "off", // 允许下划线前缀或后缀的变量名
+		"@typescript-eslint/consistent-type-imports": "off", // 不强制一致的类型导入语法
+		"@typescript-eslint/no-inferrable-types": "off", // 允许显式可推断类型注释
+		"@typescript-eslint/parameter-properties": "off", // 允许构造函数参数属性语法
+		"no-unused-vars": "off", // 关闭基础 no-unused-vars 规则，改用 TS 版本处理
+		"no-template-curly-in-string": "off", // 允许字符串中出现模板占位符形式
+		"prefer-destructuring": "off", // 不强制使用解构赋值
+		"@typescript-eslint/method-signature-style": "off", // 不强制方法签名风格
+		"typescript/array-type": "off", // 不强制使用 Array<T> 语法
+		"eslint/no-new": "off", // 允许 new 用于副作用场景
+		"unicorn/prefer-array-find": "off", // 允许先 filter 再取首项的写法
+		"eslint/capitalized-comments": "off", // 允许注释首字母小写
+		"unicorn/text-encoding-identifier-case": "off", // 允许 utf-8 或 utf8 编码标识
+		"no-control-regex": "off" // 允许正则匹配控制字符(用于清理 ANSI/控制字符)
+	},
+	"overrides": [
+		{
+			"files": ["test/unit/lsp/manager.test.ts"],
+			"rules": {
+				"oxc/const-comparisons": "off"
+			}
+		}
+	],
+	"env": {
+		"builtin": true
+	},
+	"ignorePatterns": [
+		"node_modules/",
+		"dist/",
+		".crab/",
+		".claude/",
+		".omc/",
+		".planning/",
+		"artifacts/",
+		"release/",
+		"sessions/",
+		"var/"
+	]
+}

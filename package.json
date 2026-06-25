@@ -1,0 +1,134 @@
+{
+  "name": "crab-cli",
+  "version": "0.5.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "crab-cli contributors",
+  "description": "终端智能编程助手 — Multi-Agent 协作 + MCP 原生 Runtime + TUI",
+  "keywords": [
+    "ai",
+    "cli",
+    "agent",
+    "mcp",
+    "tui",
+    "coding-assistant",
+    "opentui",
+    "bun"
+  ],
+  "bin": {
+    "crab": "./bin/crab.js",
+    "crab-bun": "./bin/crab.ts",
+    "crab-local": "./bin/crab-local.ts"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "src/",
+    "scripts/install.sh",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "PATH=\"$HOME/.bun/bin:$PATH\" CRAB_DEV=1 bun run --watch src/index.ts",
+    "start": "PATH=\"$HOME/.bun/bin:$PATH\" bun run src/index.ts",
+    "debug": "PATH=\"$HOME/.bun/bin:$PATH\" CRAB_DEV=1 bun run src/index.ts",
+    "build": "PATH=\"$HOME/.bun/bin:$PATH\" bun run build.ts",
+    "local": "PATH=\"$HOME/.bun/bin:$PATH\" bun run release:local",
+    "local:link": "PATH=\"$HOME/.bun/bin:$PATH\" bun run scripts/install-local-bin.ts",
+    "release": "release-it",
+    "release:build": "PATH=\"$HOME/.bun/bin:$PATH\" bun run scripts/release/build-all.ts",
+    "release:package": "PATH=\"$HOME/.bun/bin:$PATH\" bun run scripts/release/package-release.ts",
+    "release:checksums": "PATH=\"$HOME/.bun/bin:$PATH\" bun run scripts/release/checksums.ts",
+    "release:verify": "PATH=\"$HOME/.bun/bin:$PATH\" bun run scripts/release/verify-release.ts",
+    "release:local": "PATH=\"$HOME/.bun/bin:$PATH\" bun run release:build && PATH=\"$HOME/.bun/bin:$PATH\" bun run release:package && PATH=\"$HOME/.bun/bin:$PATH\" bun run release:checksums && PATH=\"$HOME/.bun/bin:$PATH\" bun run release:verify",
+    "security:check": "PATH=\"$HOME/.bun/bin:$PATH\" bun pm scan",
+    "audit:check": "PATH=\"$HOME/.bun/bin:$PATH\" bun run security:check",
+    "test": "PATH=\"$HOME/.bun/bin:$PATH\" bun test --isolate",
+    "test:agent": "PATH=\"$HOME/.bun/bin:$PATH\" bun test test/unit/agent/ test/unit/agent/runtime/ test/integration/agentSession.llm.test.ts test/integration/agent/vision.llm.test.ts test/integration/agent*.test.ts",
+    "test:agent:watch": "PATH=\"$HOME/.bun/bin:$PATH\" bun test --watch test/unit/agent/ test/unit/agent/runtime/ test/integration/agent*.test.ts",
+    "test:agent:live:smoke": "PATH=\"$HOME/.bun/bin:$PATH\" bun test test/integration/agentSession.llm.test.ts test/integration/agent/vision.llm.test.ts",
+    "test:agent:live:long": "PATH=\"$HOME/.bun/bin:$PATH\" CRAB_RUN_LIVE_LONG_TESTS=1 bun test test/integration/agentTeam.llm.test.ts test/integration/agentComplex.llm.test.ts",
+    "test:coverage": "PATH=\"$HOME/.bun/bin:$PATH\" bun test --coverage",
+    "test:isolated": "PATH=\"$HOME/.bun/bin:$PATH\" bun run scripts/run-isolated-tests.ts",
+    "test:typecheck": "./node_modules/.bin/tsc --noEmit",
+    "lint": "PATH=\"$HOME/.bun/bin:$PATH\" oxlint src/ test/ bin/",
+    "lint:fix": "PATH=\"$HOME/.bun/bin:$PATH\" oxlint --fix src/ test/ bin/",
+    "lint:unused": "PATH=\"$HOME/.bun/bin:$PATH\" bun run scripts/lint-unused.ts",
+    "format": "PATH=\"$HOME/.bun/bin:$PATH\" oxfmt src/ test/ bin/",
+    "format:check": "PATH=\"$HOME/.bun/bin:$PATH\" oxfmt --check src/ test/ bin/",
+    "format:legacy": "PATH=\"$HOME/.bun/bin:$PATH\" bun run scripts/check-format.ts",
+    "prepare": "simple-git-hooks",
+    "lint-staged": "lint-staged",
+    "benchmark": "PATH=\"$HOME/.bun/bin:$PATH\" bun run scripts/performance-benchmark.ts"
+  },
+  "dependencies": {
+    "@agentclientprotocol/sdk": "^0.25.0",
+    "@ai-sdk/anthropic": "^3.0.82",
+    "@ai-sdk/google": "^3.0.80",
+    "@ai-sdk/openai": "^3.0.69",
+    "@hono/swagger-ui": "^0.6.1",
+    "@hono/zod-openapi": "^1.4.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@opentelemetry/api": "^1.9.1",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.218.0",
+    "@opentelemetry/resources": "^2.7.1",
+    "@opentelemetry/sdk-trace-base": "^2.7.1",
+    "@opentelemetry/sdk-trace-node": "^2.7.1",
+    "@opentelemetry/semantic-conventions": "^1.41.1",
+    "@opentui/core": "0.4.0",
+    "@opentui/keymap": "^0.4.0",
+    "@opentui/solid": "0.4.0",
+    "@shikijs/stream": "^4.3.0",
+    "ai": "^6.0.201",
+    "async-mutex": "^0.5.0",
+    "decimal.js": "^10.6.0",
+    "drizzle-orm": "^0.45.2",
+    "effect": "^3.21.4",
+    "marked-shiki": "^1.2.1",
+    "puppeteer": "^25.1.0",
+    "shiki": "^4.3.0",
+    "solid-js": "^1.9.13",
+    "ulid": "^3.0.2",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@bun-security-scanner/osv": "^1.0.0",
+    "@opentelemetry/api-logs": "^0.218.0",
+    "@opentelemetry/exporter-logs-otlp-http": "^0.218.0",
+    "@opentelemetry/exporter-metrics-otlp-http": "^0.218.0",
+    "@opentelemetry/sdk-logs": "^0.218.0",
+    "@opentelemetry/sdk-metrics": "^2.7.1",
+    "@release-it/bumper": "^7.0.6",
+    "@types/bun": "^1.3.14",
+    "drizzle-kit": "^0.31.10",
+    "fast-check": "^4.8.0",
+    "lint-staged": "^17.0.7",
+    "oxfmt": "^0.54.0",
+    "oxlint": "^1.69.0",
+    "release-it": "^20.2.0",
+    "simple-git-hooks": "^2.13.1"
+  },
+  "optionalDependencies": {
+    "ssh2": "^1.17.0"
+  },
+  "overrides": {
+    "@babel/core": "7.29.7",
+    "@opentelemetry/core": "2.8.0",
+    "esbuild": "0.28.1",
+    "hono": "4.12.26",
+    "js-yaml": "4.2.0",
+    "undici": "8.5.0"
+  },
+  "peerDependencies": {
+    "typescript": "^6.0.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "oxfmt",
+      "oxlint --fix --quiet"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  }
+}

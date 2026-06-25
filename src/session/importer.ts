@@ -1,0 +1,5 @@
+/**
+ * @deprecated 请直接使用 `@session` 导入（importer 已子模块化至 session/io/）。
+ * 此文件保留为向后兼容，将在下一大版本移除。
+ */
+export * from "./io/importer";

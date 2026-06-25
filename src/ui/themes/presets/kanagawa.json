@@ -1,0 +1,75 @@
+{
+  "name": "kanagawa-preset",
+  "label": "Kanagawa (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#7e9cd8",
+    "secondary": "#957fb8",
+    "accent": "#dca561",
+    "error": "#c34043",
+    "warning": "#ffa066",
+    "success": "#76946a",
+    "info": "#6a9589",
+    "muted": "#727169",
+    "text": "#dc-dc-dc",
+    "background": "#1f1f28",
+    "border": "#2a2a37"
+  },
+  "extendedColors": {
+    "textMuted": "#727169",
+    "backgroundMenu": "#16161d",
+    "selectedListItemText": "#1f1f28",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#1f1f28",
+      "panel": "#16161d",
+      "element": "#12120f"
+    },
+    "borderExt": {
+      "main": "#2a2a37",
+      "subtle": "#16161d",
+      "active": "#727169"
+    },
+    "diff": {
+      "added": "#76946a",
+      "removed": "#c34043",
+      "context": "#727169",
+      "hunkHeader": "#6a9589",
+      "highlightAdded": "#76946a",
+      "highlightRemoved": "#c34043",
+      "addedBg": "#1a2a18",
+      "removedBg": "#2a181a",
+      "contextBg": "#1f1f28",
+      "lineNumber": "#727169",
+      "addedLineNumberBg": "#162410",
+      "removedLineNumberBg": "#241012"
+    },
+    "markdown": {
+      "text": "#dcdcdc",
+      "heading": "#7e9cd8",
+      "link": "#6a9589",
+      "linkText": "#6a9589",
+      "code": "#76946a",
+      "blockQuote": "#ffa066",
+      "emph": "#ffa066",
+      "strong": "#957fb8",
+      "horizontalRule": "#2a2a37",
+      "listItem": "#957fb8",
+      "listEnumeration": "#6a9589",
+      "image": "#957fb8",
+      "imageText": "#6a9589",
+      "codeBlock": "#dcdcdc"
+    },
+    "syntax": {
+      "comment": "#727169",
+      "keyword": "#957fb8",
+      "func": "#7e9cd8",
+      "variable": "#dcdcdc",
+      "string": "#76946a",
+      "number": "#dca561",
+      "type": "#6a9589",
+      "operator": "#c0c0c0",
+      "punctuation": "#dcdcdc"
+    }
+  }
+}

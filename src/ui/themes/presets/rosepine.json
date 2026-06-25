@@ -1,0 +1,75 @@
+{
+  "name": "rosepine-preset",
+  "label": "Rosé Pine (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#8caaee",
+    "secondary": "#ca9ee6",
+    "accent": "#e5c890",
+    "error": "#e78284",
+    "warning": "#ef9f76",
+    "success": "#a6d189",
+    "info": "#99d1db",
+    "muted": "#737994",
+    "text": "#c6d0f5",
+    "background": "#232136",
+    "border": "#373354"
+  },
+  "extendedColors": {
+    "textMuted": "#737994",
+    "backgroundMenu": "#1c1b2a",
+    "selectedListItemText": "#232136",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#232136",
+      "panel": "#1c1b2a",
+      "element": "#191724"
+    },
+    "borderExt": {
+      "main": "#373354",
+      "subtle": "#232136",
+      "active": "#5b5772"
+    },
+    "diff": {
+      "added": "#a6d189",
+      "removed": "#e78284",
+      "context": "#737994",
+      "hunkHeader": "#8caaee",
+      "highlightAdded": "#a6d189",
+      "highlightRemoved": "#e78284",
+      "addedBg": "#1c2a1a",
+      "removedBg": "#2a1a1c",
+      "contextBg": "#232136",
+      "lineNumber": "#737994",
+      "addedLineNumberBg": "#182418",
+      "removedLineNumberBg": "#241618"
+    },
+    "markdown": {
+      "text": "#c6d0f5",
+      "heading": "#ca9ee6",
+      "link": "#8caaee",
+      "linkText": "#99d1db",
+      "code": "#a6d189",
+      "blockQuote": "#ef9f76",
+      "emph": "#ef9f76",
+      "strong": "#e5c890",
+      "horizontalRule": "#373354",
+      "listItem": "#e5c890",
+      "listEnumeration": "#99d1db",
+      "image": "#e5c890",
+      "imageText": "#99d1db",
+      "codeBlock": "#c6d0f5"
+    },
+    "syntax": {
+      "comment": "#737994",
+      "keyword": "#ca9ee6",
+      "func": "#8caaee",
+      "variable": "#e78284",
+      "string": "#a6d189",
+      "number": "#ef9f76",
+      "type": "#e5c890",
+      "operator": "#99d1db",
+      "punctuation": "#c6d0f5"
+    }
+  }
+}

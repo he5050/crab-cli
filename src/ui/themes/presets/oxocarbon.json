@@ -1,0 +1,75 @@
+{
+  "name": "oxocarbon-preset",
+  "label": "Oxocarbon (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#33b1ff",
+    "secondary": "#be95ff",
+    "accent": "#ee5396",
+    "error": "#ff7eb6",
+    "warning": "#ffb454",
+    "success": "#42be65",
+    "info": "#33b1ff",
+    "muted": "#525252",
+    "text": "#f4f4f4",
+    "background": "#161616",
+    "border": "#262626"
+  },
+  "extendedColors": {
+    "textMuted": "#525252",
+    "backgroundMenu": "#121212",
+    "selectedListItemText": "#161616",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#161616",
+      "panel": "#121212",
+      "element": "#0d0d0d"
+    },
+    "borderExt": {
+      "main": "#262626",
+      "subtle": "#1a1a1a",
+      "active": "#525252"
+    },
+    "diff": {
+      "added": "#42be65",
+      "removed": "#ff7eb6",
+      "context": "#525252",
+      "hunkHeader": "#33b1ff",
+      "highlightAdded": "#42be65",
+      "highlightRemoved": "#ff7eb6",
+      "addedBg": "#0e1f14",
+      "removedBg": "#1f0e16",
+      "contextBg": "#161616",
+      "lineNumber": "#525252",
+      "addedLineNumberBg": "#0a1810",
+      "removedLineNumberBg": "#180a10"
+    },
+    "markdown": {
+      "text": "#f4f4f4",
+      "heading": "#33b1ff",
+      "link": "#33b1ff",
+      "linkText": "#33b1ff",
+      "code": "#42be65",
+      "blockQuote": "#ffb454",
+      "emph": "#ffb454",
+      "strong": "#be95ff",
+      "horizontalRule": "#262626",
+      "listItem": "#be95ff",
+      "listEnumeration": "#33b1ff",
+      "image": "#be95ff",
+      "imageText": "#33b1ff",
+      "codeBlock": "#f4f4f4"
+    },
+    "syntax": {
+      "comment": "#525252",
+      "keyword": "#be95ff",
+      "func": "#33b1ff",
+      "variable": "#f4f4f4",
+      "string": "#42be65",
+      "number": "#ee5396",
+      "type": "#ffb454",
+      "operator": "#be95ff",
+      "punctuation": "#f4f4f4"
+    }
+  }
+}

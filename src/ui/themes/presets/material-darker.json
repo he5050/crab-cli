@@ -1,0 +1,75 @@
+{
+  "name": "material-darker-preset",
+  "label": "Material Darker (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#82aaff",
+    "secondary": "#c792ea",
+    "accent": "#ffcb6b",
+    "error": "#ff5370",
+    "warning": "#ffcb6b",
+    "success": "#c3e88d",
+    "info": "#89ddff",
+    "muted": "#546e7a",
+    "text": "#eeffff",
+    "background": "#212121",
+    "border": "#2c2c2c"
+  },
+  "extendedColors": {
+    "textMuted": "#546e7a",
+    "backgroundMenu": "#1a1a1a",
+    "selectedListItemText": "#212121",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#212121",
+      "panel": "#1a1a1a",
+      "element": "#151515"
+    },
+    "borderExt": {
+      "main": "#2c2c2c",
+      "subtle": "#1a1a1a",
+      "active": "#546e7a"
+    },
+    "diff": {
+      "added": "#c3e88d",
+      "removed": "#ff5370",
+      "context": "#546e7a",
+      "hunkHeader": "#89ddff",
+      "highlightAdded": "#c3e88d",
+      "highlightRemoved": "#ff5370",
+      "addedBg": "#1a2a14",
+      "removedBg": "#2a1418",
+      "contextBg": "#212121",
+      "lineNumber": "#546e7a",
+      "addedLineNumberBg": "#162410",
+      "removedLineNumberBg": "#241012"
+    },
+    "markdown": {
+      "text": "#eeffff",
+      "heading": "#82aaff",
+      "link": "#89ddff",
+      "linkText": "#89ddff",
+      "code": "#c3e88d",
+      "blockQuote": "#ffcb6b",
+      "emph": "#ffcb6b",
+      "strong": "#c792ea",
+      "horizontalRule": "#2c2c2c",
+      "listItem": "#c792ea",
+      "listEnumeration": "#89ddff",
+      "image": "#c792ea",
+      "imageText": "#89ddff",
+      "codeBlock": "#eeffff"
+    },
+    "syntax": {
+      "comment": "#546e7a",
+      "keyword": "#c792ea",
+      "func": "#82aaff",
+      "variable": "#eeffff",
+      "string": "#c3e88d",
+      "number": "#f78c6c",
+      "type": "#ffcb6b",
+      "operator": "#89ddff",
+      "punctuation": "#eeffff"
+    }
+  }
+}

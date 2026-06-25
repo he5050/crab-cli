@@ -1,0 +1,75 @@
+{
+  "name": "monokai-preset",
+  "label": "Monokai (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#66d9ef",
+    "secondary": "#ae81ff",
+    "accent": "#fd971f",
+    "error": "#f92672",
+    "warning": "#fd971f",
+    "success": "#a6e22e",
+    "info": "#66d9ef",
+    "muted": "#75715e",
+    "text": "#f8f8f2",
+    "background": "#272822",
+    "border": "#3e3d32"
+  },
+  "extendedColors": {
+    "textMuted": "#75715e",
+    "backgroundMenu": "#1e1f1c",
+    "selectedListItemText": "#272822",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#272822",
+      "panel": "#1e1f1c",
+      "element": "#1a1b18"
+    },
+    "borderExt": {
+      "main": "#3e3d32",
+      "subtle": "#2e2d26",
+      "active": "#75715e"
+    },
+    "diff": {
+      "added": "#a6e22e",
+      "removed": "#f92672",
+      "context": "#75715e",
+      "hunkHeader": "#66d9ef",
+      "highlightAdded": "#a6e22e",
+      "highlightRemoved": "#f92672",
+      "addedBg": "#1e2a16",
+      "removedBg": "#2a1a20",
+      "contextBg": "#272822",
+      "lineNumber": "#75715e",
+      "addedLineNumberBg": "#1a2412",
+      "removedLineNumberBg": "#24161c"
+    },
+    "markdown": {
+      "text": "#f8f8f2",
+      "heading": "#66d9ef",
+      "link": "#ae81ff",
+      "linkText": "#ae81ff",
+      "code": "#a6e22e",
+      "blockQuote": "#fd971f",
+      "emph": "#fd971f",
+      "strong": "#f92672",
+      "horizontalRule": "#3e3d32",
+      "listItem": "#f92672",
+      "listEnumeration": "#66d9ef",
+      "image": "#f92672",
+      "imageText": "#ae81ff",
+      "codeBlock": "#f8f8f2"
+    },
+    "syntax": {
+      "comment": "#75715e",
+      "keyword": "#f92672",
+      "func": "#a6e22e",
+      "variable": "#f8f8f2",
+      "string": "#e6db74",
+      "number": "#ae81ff",
+      "type": "#66d9ef",
+      "operator": "#f92672",
+      "punctuation": "#f8f8f2"
+    }
+  }
+}

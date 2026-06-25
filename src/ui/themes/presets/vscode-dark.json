@@ -1,0 +1,75 @@
+{
+  "name": "vscode-dark-preset",
+  "label": "VS Code Dark+ (Preset)",
+  "mode": "dark",
+  "colors": {
+    "primary": "#569cd6",
+    "secondary": "#c586c0",
+    "accent": "#dcdcaa",
+    "error": "#f44747",
+    "warning": "#ce9178",
+    "success": "#6a9955",
+    "info": "#4fc1ff",
+    "muted": "#6e7681",
+    "text": "#d4d4d4",
+    "background": "#1e1e1e",
+    "border": "#2d2d2d"
+  },
+  "extendedColors": {
+    "textMuted": "#6e7681",
+    "backgroundMenu": "#181818",
+    "selectedListItemText": "#1e1e1e",
+    "thinkingOpacity": 0.6,
+    "bg": {
+      "main": "#1e1e1e",
+      "panel": "#181818",
+      "element": "#131313"
+    },
+    "borderExt": {
+      "main": "#2d2d2d",
+      "subtle": "#181818",
+      "active": "#6e7681"
+    },
+    "diff": {
+      "added": "#6a9955",
+      "removed": "#f44747",
+      "context": "#6e7681",
+      "hunkHeader": "#4fc1ff",
+      "highlightAdded": "#6a9955",
+      "highlightRemoved": "#f44747",
+      "addedBg": "#1a2a14",
+      "removedBg": "#2a1418",
+      "contextBg": "#1e1e1e",
+      "lineNumber": "#6e7681",
+      "addedLineNumberBg": "#162410",
+      "removedLineNumberBg": "#241012"
+    },
+    "markdown": {
+      "text": "#d4d4d4",
+      "heading": "#569cd6",
+      "link": "#4fc1ff",
+      "linkText": "#4fc1ff",
+      "code": "#ce9178",
+      "blockQuote": "#6a9955",
+      "emph": "#dcdcaa",
+      "strong": "#c586c0",
+      "horizontalRule": "#2d2d2d",
+      "listItem": "#c586c0",
+      "listEnumeration": "#4fc1ff",
+      "image": "#c586c0",
+      "imageText": "#4fc1ff",
+      "codeBlock": "#d4d4d4"
+    },
+    "syntax": {
+      "comment": "#6a9955",
+      "keyword": "#569cd6",
+      "func": "#dcdcaa",
+      "variable": "#9cdcfe",
+      "string": "#ce9178",
+      "number": "#b5cea8",
+      "type": "#4ec9b0",
+      "operator": "#d4d4d4",
+      "punctuation": "#d4d4d4"
+    }
+  }
+}

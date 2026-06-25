@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "types": ["bun"]
+  },
+  "include": [
+    "src/ui/**/*.ts",
+    "src/ui/**/*.tsx",
+    "src/tool/**/*.ts",
+    "src/tool/**/*.tsx",
+    "src/conversation/**/*.ts",
+    "src/conversation/**/*.tsx"
+  ]
+}

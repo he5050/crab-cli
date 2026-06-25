@@ -1,0 +1,11 @@
+preload = ["@opentui/solid/preload"]
+
+[test]
+root = "./test"
+preload = ["@opentui/solid/preload", "./test/setup.ts"]
+
+coverage = false
+timeout = 30000
+
+[install.security]
+scanner = "@bun-security-scanner/osv"

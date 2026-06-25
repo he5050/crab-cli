@@ -1,0 +1,127 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "target": "ESNext",
+    "module": "Preserve",
+    "moduleDetection": "force",
+    "jsx": "preserve",
+    "jsxImportSource": "@opentui/solid",
+    "allowJs": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "*": [
+        "./*"
+      ],
+      "@/*": [
+        "./src/*"
+      ],
+      "@app": [
+        "./src/app"
+      ],
+      "@cli": [
+        "./src/cli"
+      ],
+      "@bus": [
+        "./src/bus"
+      ],
+      "@core": [
+        "./src/core"
+      ],
+      "@config": [
+        "./src/config"
+      ],
+      "@schema": [
+        "./src/schema"
+      ],
+      "@tool": [
+        "./src/tool"
+      ],
+      "@extension": [
+        "./src/extension"
+      ],
+      "@mcp": [
+        "./src/mcp"
+      ],
+      "@ui": [
+        "./src/ui"
+      ],
+      "@permission": [
+        "./src/permission"
+      ],
+      "@api": [
+        "./src/api"
+      ],
+      "@hooks": [
+        "./src/hooks"
+      ],
+      "@skills": [
+        "./src/skills"
+      ],
+      "@conversation": [
+        "./src/conversation"
+      ],
+      "@mission": [
+        "./src/mission"
+      ],
+      "@ide": [
+        "./src/ide"
+      ],
+      "@server": [
+        "./src/server"
+      ],
+      "@lsp": [
+        "./src/lsp"
+      ],
+      "@monitor": [
+        "./src/monitor"
+      ],
+      "@agent": [
+        "./src/agent"
+      ],
+      "@db": [
+        "./src/db"
+      ],
+      "@session": [
+        "./src/session"
+      ],
+      "@security": [
+        "./src/security"
+      ],
+      "@compress": [
+        "./src/compress"
+      ],
+      "@command": [
+        "./src/command"
+      ],
+      "@commandPalette": [
+        "./src/commandPalette"
+      ],
+      "@test/*": [
+        "./test/*"
+      ],
+      "@testHelpers": [
+        "./test/helpers"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "bin/**/*",
+    "test/**/*"
+  ]
+}

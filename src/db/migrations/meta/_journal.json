@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1780465990200,
+      "tag": "0000_mature_aqueduct",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1780600000000,
+      "tag": "0001_durable_events",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1780700000000,
+      "tag": "0002_parts_table",
+      "breakpoints": true
+    }
+  ]
+}
